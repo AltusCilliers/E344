@@ -1,4 +1,4 @@
-LTspice\*.raw
-LTspice\*.csv
-LTspice\*.txt
-LTspice\*.lib
+LTspice/*.raw
+LTspice/*.csv
+LTspice/*.txt
+LTspice/*.lib
