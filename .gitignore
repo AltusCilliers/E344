@@ -1,7 +1,6 @@
 LTspice/*.raw
 LTspice/*.csv
 LTspice/*.txt
-LTspice/*.lib
 LTspice/*.log
 LTspice/*.zip
 LTspice/*.net
