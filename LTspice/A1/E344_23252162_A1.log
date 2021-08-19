@@ -1,0 +1,21 @@
+Circuit: * D:\Univsersity\2021-3rd Year S2\Design (E) - 344\GitRepo\E344\LTspice\E344_23252162_A1.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Aug 14 12:46:39 2021
+Total elapsed time: 0.107 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 5569
+traniter = 5537
+tranpoints = 2478
+accept = 2363
+rejected = 115
+matrix size = 26
+fillins = 9
+solver = Normal
+Matrix Compiler1: 1.93 KB object code size  0.4/0.2/[0.1]
+Matrix Compiler2: off  [0.2]/0.3/0.2
+
