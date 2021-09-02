@@ -1,4 +1,4 @@
-LTspice/*.raw
+LTspice/A1/*.raw
 LTspice/*.csv
 LTspice/*.txt
 LTspice/*.log
