@@ -25,3 +25,10 @@ LTspice/A4/*.txt
 LTspice/A4/*.log
 LTspice/A4/*.zip
 LTspice/A4/*.net
+
+LTspice/A6/*.raw
+LTspice/A6/*.csv
+LTspice/A6/*.txt
+LTspice/A6/*.log
+LTspice/A6/*.zip
+LTspice/A6/*.net
