@@ -3,45 +3,23 @@ Circuit: * D:\Univsersity\2021-3rd Year S2\Design (E) - 344\GitRepo\E344\LTspice
 V5: Removing PWL point (7.5,1)
 V3: Removing PWL point (7.5,0)
 V_ldr: Removing PWL point (7.5,500000)
-WARNING: Less than two connections to node N011.  This node is used by D3.
-WARNING: Less than two connections to node NC_01.  This node is used by D4.
-WARNING: Less than two connections to node LOADCONTROL.  This node is used by M3.
-Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
-Starting Gmin stepping
-Gmin = 10
-Gmin = 1.07374
-Gmin = 0.115292
-Gmin = 0.0123794
-Gmin = 0.00132923
-Gmin = 0.000142725
-Gmin = 1.5325e-005
-Gmin = 1.6455e-006
-Gmin = 1.76685e-007
-Gmin = 1.89714e-008
-Gmin = 2.03704e-009
-Gmin = 2.18725e-010
-Gmin = 2.34854e-011
-Gmin = 2.52173e-012
-Gmin = 2.70769e-013
-Gmin = 0
-Gmin stepping succeeded in finding the operating point.
+Direct Newton iteration for .op point succeeded.
 
-
-Date: Thu Oct 07 14:18:43 2021
-Total elapsed time: 0.164 seconds.
+Date: Fri Oct 08 09:37:28 2021
+Total elapsed time: 0.128 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 3028
-traniter = 2521
-tranpoints = 1159
-accept = 1126
-rejected = 33
-matrix size = 59
-fillins = 66
+totiter = 2442
+traniter = 2411
+tranpoints = 1134
+accept = 1111
+rejected = 23
+matrix size = 60
+fillins = 42
 solver = Normal
-Thread vector: 8.0/5.5[2] 2.2/1.7[2] 1.3/1.3[1] 0.1/0.5[1]  2592/500
-Matrix Compiler1: 7.86 KB object code size  1.2/0.7/[0.5]
-Matrix Compiler2: 5.82 KB object code size  0.6/0.8/[0.4]
+Thread vector: 7.7/5.5[2] 2.2/1.8[2] 1.0/1.1[1] 0.1/0.4[1]  2592/500
+Matrix Compiler1: 5.90 KB object code size  0.9/0.5/[0.4]
+Matrix Compiler2: 5.33 KB object code size  0.4/0.6/[0.3]
 
