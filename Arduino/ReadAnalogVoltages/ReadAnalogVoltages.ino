@@ -18,6 +18,8 @@ void setup() {
 
 // the loop routine runs over and over again forever:
 void loop() {
+  //Check for Overcharge Protection 
+  
   // read the Battery Voltage on analog pin 1:
   int ADCValueBattery = analogRead(A1);
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
@@ -38,9 +40,16 @@ void loop() {
   float currentBattery = ADCValueCurrent * (5.0 / 1023.0);
   // Convert the output voltage to the Original Battery Voltage
   float currentBatteryInput = ((currentBattery-1.75)/5)*(10^3) ;  //10^3 converts A to mA
+
+  // read the Light Level on analog pin 10:
+  int ADCValueLight = analogRead(A10);
+  // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
+  float voltageLight = ADCValueLight * (5.0 / 1023.0);
+  byte LightPercentage = (((voltageLight*0.2)-1)*-1)*100;
   
   // print out the values you read:
   Serial.println(voltageBatteryInput);
   Serial.println(voltageSupplyInput);
   Serial.println(currentBatteryInput);
+  Serial.println(LightPercentage);
 }
