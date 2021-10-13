@@ -1,24 +1,34 @@
-/*
-  ReadAnalogVoltage
-
-  Reads an analog input on pin 0, converts it to voltage, and prints the result to the Serial Monitor.
-  Graphical representation is available using Serial Plotter (Tools > Serial Plotter menu).
-  Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.
-
-  This example code is in the public domain.
-
-  https://www.arduino.cc/en/Tutorial/BuiltInExamples/ReadAnalogVoltage
-*/
+String UserInput = "";
+String OV1 = "OV1";
+String OV0 = "OV0";
+char buffer[40];
+bool Overcharge = true;
 
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
+  //Setup Pin D0 as Output Pin
+  pinMode(0, OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   //Check for Overcharge Protection 
+    if(Serial.available()){
+        UserInput = Serial.readString();
+        Serial.println(UserInput);
+    }
+
+    if(UserInput.equals(OV1)){
+      Overcharge = true;
+      //set Pin 0 High
+      Serial.println("High");
+    } else if (UserInput.equals(OV0)){
+      Overcharge = false;
+      //set Pin 0 Low
+      Serial.println("Low");
+    }
   
   // read the Battery Voltage on analog pin 1:
   int ADCValueBattery = analogRead(A1);
@@ -48,8 +58,14 @@ void loop() {
   byte LightPercentage = (((voltageLight*0.2)-1)*-1)*100;
   
   // print out the values you read:
-  Serial.println(voltageBatteryInput);
-  Serial.println(voltageSupplyInput);
-  Serial.println(currentBatteryInput);
+  Serial.print(Overcharge);
+  Serial.print(", ");
+  Serial.print(voltageBatteryInput);
+  Serial.print(", ");
+  Serial.print(voltageSupplyInput);
+  Serial.print(", ");
+  Serial.print(currentBatteryInput);
+  Serial.print(", ");
   Serial.println(LightPercentage);
+  delay(1000);
 }
