@@ -19,12 +19,10 @@ void loop() {
       Overcharge = true;
       //set Pin 0 High
       digitalWrite(A0, HIGH);
-      Serial.println("High");
     } else if (UserInput.equals("OV0")){
       Overcharge = false;
       //set Pin 0 Low
       digitalWrite(A0, LOW);
-      Serial.println("Low");
     }
    }
   
@@ -53,6 +51,7 @@ void loop() {
   int ADCValueLight = analogRead(A10);
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float voltageLight = ADCValueLight * (5.0 / 1023.0);
+  //Convert the output voltage to a scale of 0-100%
   byte LightPercentage = (((voltageLight*0.2)-1)*-1)*100;
   
   // print out the values you read:
