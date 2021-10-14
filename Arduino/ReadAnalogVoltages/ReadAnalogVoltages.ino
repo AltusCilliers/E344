@@ -1,34 +1,32 @@
-String UserInput = "";
-String OV1 = "OV1";
-String OV0 = "OV0";
-char buffer[40];
 bool Overcharge = true;
 
 // the setup routine runs once when you press reset:
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
-  //Setup Pin D0 as Output Pin
-  pinMode(0, OUTPUT);
+  //Setup Pin A0 as Output Pin
+  pinMode(A0, OUTPUT);
 }
 
 // the loop routine runs over and over again forever:
 void loop() {
   //Check for Overcharge Protection 
-    if(Serial.available()){
-        UserInput = Serial.readString();
-        Serial.println(UserInput);
-    }
+   if (Serial.available()) {
+    String UserInput = Serial.readStringUntil('\n');
+    UserInput.trim();
 
-    if(UserInput.equals(OV1)){
+    if(UserInput.equals("OV1")){
       Overcharge = true;
       //set Pin 0 High
+      digitalWrite(A0, HIGH);
       Serial.println("High");
-    } else if (UserInput.equals(OV0)){
+    } else if (UserInput.equals("OV0")){
       Overcharge = false;
       //set Pin 0 Low
+      digitalWrite(A0, LOW);
       Serial.println("Low");
     }
+   }
   
   // read the Battery Voltage on analog pin 1:
   int ADCValueBattery = analogRead(A1);
@@ -49,7 +47,7 @@ void loop() {
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float currentBattery = ADCValueCurrent * (5.0 / 1023.0);
   // Convert the output voltage to the Original Battery Voltage
-  float currentBatteryInput = ((currentBattery-1.75)/5)*(10^3) ;  //10^3 converts A to mA
+  float currentBatteryInput = ((currentBattery-1.75)/5)*(1000) ;  //10^3 converts A to mA
 
   // read the Light Level on analog pin 10:
   int ADCValueLight = analogRead(A10);

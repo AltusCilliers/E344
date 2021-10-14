@@ -1,0 +1,9 @@
+* D:\Univsersity\2021-3rd Year S2\Design (E) - 344\GitRepo\E344\LTspice\A7\Draft1.asc
+D1 P001 N001 1N5819
+V1 N001 0 5
+R1 0 P001 1k
+.model D D
+.lib C:\Users\Altus\Documents\LTspiceXVII\lib\cmp\standard.dio
+.tran 5
+.backanno
+.end
