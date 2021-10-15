@@ -1,25 +1,29 @@
 Circuit: * D:\Univsersity\2021-3rd Year S2\Design (E) - 344\GitRepo\E344\LTspice\A7\E344_23252162_A7.asc
 
+Limiting rise time of source v7 to 0.01
+Limiting fall time of source v7 to 0.01
+Limiting rise time of source v6 to 0.011
+Limiting fall time of source v6 to 0.011
 V5: Removing PWL point (7.5,1)
 V3: Removing PWL point (7.5,0)
 V_ldr: Removing PWL point (7.5,500000)
 Direct Newton iteration for .op point succeeded.
 
-Date: Fri Oct 08 09:37:28 2021
-Total elapsed time: 0.128 seconds.
+Date: Fri Oct 15 23:02:41 2021
+Total elapsed time: 0.185 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 2442
-traniter = 2411
-tranpoints = 1134
-accept = 1111
-rejected = 23
-matrix size = 60
-fillins = 42
+totiter = 4864
+traniter = 4821
+tranpoints = 1857
+accept = 1631
+rejected = 226
+matrix size = 61
+fillins = 46
 solver = Normal
-Thread vector: 7.7/5.5[2] 2.2/1.8[2] 1.0/1.1[1] 0.1/0.4[1]  2592/500
-Matrix Compiler1: 5.90 KB object code size  0.9/0.5/[0.4]
-Matrix Compiler2: 5.33 KB object code size  0.4/0.6/[0.3]
+Thread vector: 13.7/9.2[2] 4.3/3.0[2] 1.6/1.7[1] 0.1/0.5[1]  2592/500
+Matrix Compiler1: 6.05 KB object code size  1.9/1.1/[0.8]
+Matrix Compiler2: 5.47 KB object code size  0.7/1.1/[0.3]
 

@@ -1,4 +1,4 @@
-bool Overcharge = true;
+bool Overcharge = false;
 
 // the setup routine runs once when you press reset:
 void setup() {
@@ -45,7 +45,7 @@ void loop() {
   // Convert the analog reading (which goes from 0 - 1023) to a voltage (0 - 5V):
   float currentBattery = ADCValueCurrent * (5.0 / 1023.0);
   // Convert the output voltage to the Original Battery Voltage
-  float currentBatteryInput = ((currentBattery-1.75)/5)*(1000) ;  //10^3 converts A to mA
+  float currentBatteryInput = ((currentBattery-1.79)/5)*(1000) ;  //10^3 converts A to mA
 
   // read the Light Level on analog pin 10:
   int ADCValueLight = analogRead(A10);
