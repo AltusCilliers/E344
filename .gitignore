@@ -32,3 +32,8 @@ LTspice/A6/*.txt
 LTspice/A6/*.log
 LTspice/A6/*.zip
 LTspice/A6/*.net
+
+Python/*.iml
+Python/*.xml
+Python/*.pyc
+
