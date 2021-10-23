@@ -1,11 +1,13 @@
 # import Tkinter
 import tkinter as tk
+from tkinter import ttk
 
 # import SerialComms
 import SerialComms
 
 # import serial exception handler
 from serial import SerialException
+from PIL import Image, ImageTk
 
 comPort = 'COM3'
 baudRate = 9600
@@ -25,7 +27,7 @@ def mainWin():
     canvas.grid(rowspan=51,columnspan=5)
 
     # give the window a title
-    window.title("Design (E.) 344")
+    window.title("Design (E.) 344 23252162")
 
     # define the dimensions of the window
     windowWidth = 800;  # width in pixels
@@ -90,6 +92,7 @@ def mainWin():
     StopChargingButton = tk.Button(text=StopChargingButtonText, bg='black', fg='white',command=lambda: buttonStopChargingHandler())
     StopChargingButton.grid(column=0, row=6, columnspan=2)
 
+  
     # Define battery voltage label
     batteryVoltage = tk.StringVar()
     # creates label showing the Battery Voltage Text
@@ -278,19 +281,24 @@ def mainWin():
 
 #Create A Splash Screen
 splashWindow = tk.Tk()
-splashWindow.title("Welcome To Design (E.) 344")
+splashWindow.title("Design (E.) 344 23252162")
 
 # define the dimensions of the window
 splashWindowWidth = 1024;  # width in pixels
-splashWindowHeight = 720;  # height in pixels
+splashWindowHeight = 700;  # height in pixels
 
 #Remove border of the splash Window
 splashWindow.overrideredirect(False)
 
 #Define the label of the window
-splashWindowLabel = tk.Label(text= "Hello World!", fg= "green")
+splashWindowLabel = tk.Label(text= "Built by AA. Cilliers 23252162", fg= "blue")
 splashWindowLabel.grid(column=0, row=2)
 
+logo = Image.open('D:/Univsersity/2021-3rd Year S2/Design (E) - 344/GitRepo/E344/Python/Edesign344V2/logo.png')
+logo = ImageTk.PhotoImage(logo)
+logo_label = tk.Label(image=logo)
+logo_label.image = logo
+logo_label.grid(column=0,row=0)
 
 # make the window pop up in the middle of the display, on any size display
 widthSystem = splashWindow.winfo_screenwidth()  # get width of current screen
@@ -320,7 +328,7 @@ def closeConnection(sc):
 
 print(connectionBoolStatus)
 #updateDisplay()
-splashWindow.after(500,mainWin)
+splashWindow.after(2500,mainWin)
 splashWindow.mainloop()
 
 
