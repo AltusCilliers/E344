@@ -30,8 +30,8 @@ def mainWin():
     window.title("Design (E.) 344 23252162")
 
     # define the dimensions of the window
-    windowWidth = 800;  # width in pixels
-    windowHeight = 600;  # height in pixels
+    windowWidth = 800  # width in pixels
+    windowHeight = 600  # height in pixels
 
     # make the window pop up in the middle of the display, on any size display
     widthSystem = window.winfo_screenwidth()  # get width of current screen
@@ -92,7 +92,7 @@ def mainWin():
     StopChargingButton = tk.Button(text=StopChargingButtonText, bg='black', fg='white',command=lambda: buttonStopChargingHandler())
     StopChargingButton.grid(column=0, row=6, columnspan=2)
 
-  
+
     # Define battery voltage label
     batteryVoltage = tk.StringVar()
     # creates label showing the Battery Voltage Text
@@ -184,7 +184,7 @@ def mainWin():
 
             # Tries to open the serial conection. Displays error message in ConnectFeedback if it fails.
             try:
-                openConnection(sc);
+                openConnection(sc)
             except SerialException:
                 print("Unable to connect.")
 
@@ -244,7 +244,7 @@ def mainWin():
         #print(pwmValue)
         if (sc.isOpen == True):
             data = sc.receive()
-            if (len(data) == 1):
+            if ((len(data) == 1) & (data!=[] and data[0].count(',')==7)):
                 print(data[0])
                 inputData = data[0].split(',')
                 if (inputData[0] == '1'):
@@ -284,8 +284,8 @@ splashWindow = tk.Tk()
 splashWindow.title("Design (E.) 344 23252162")
 
 # define the dimensions of the window
-splashWindowWidth = 1024;  # width in pixels
-splashWindowHeight = 700;  # height in pixels
+splashWindowWidth = 1024  # width in pixels
+splashWindowHeight = 700  # height in pixels
 
 #Remove border of the splash Window
 splashWindow.overrideredirect(False)
