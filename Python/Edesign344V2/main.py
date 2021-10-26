@@ -9,7 +9,7 @@ import SerialComms
 from serial import SerialException
 from PIL import Image, ImageTk
 
-comPort = 'COM3'
+comPort = 'COM5'
 baudRate = 9600
 connectionBoolStatus=0
 startUpCounter = 0
@@ -244,7 +244,7 @@ def mainWin():
         #print(pwmValue)
         if (sc.isOpen == True):
             data = sc.receive()
-            if ((len(data) == 1) & (data!=[] and data[0].count(',')==7)):
+            if ((len(data) == 1) & (data!=[] and data[0].count(',')==6)):
                 print(data[0])
                 inputData = data[0].split(',')
                 if (inputData[0] == '1'):
@@ -328,7 +328,7 @@ def closeConnection(sc):
 
 print(connectionBoolStatus)
 #updateDisplay()
-splashWindow.after(2500,mainWin)
+splashWindow.after(3500,mainWin)
 splashWindow.mainloop()
 
 
