@@ -1,0 +1,3 @@
+Circuit: * C:\Users\kmcoe\OneDrive - Stellenbosch University\University\PhD\Teaching Assistant\2021\Design (E) 344\LTspice\Assessments\Assessment 1\Template\E344_A1_template.asc
+
+Fatal Error: MOSFET m2: the Vertical DMOS FET requires the source and bulk to be the same node.

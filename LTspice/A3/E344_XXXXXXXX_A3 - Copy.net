@@ -1,0 +1,39 @@
+* D:\Univsersity\2021-3rd Year S2\Design (E) - 344\GitRepo\E344\LTspice\A3\E344_XXXXXXXX_A3 - Copy.asc
+V1 VSupply 0 PWL file=PowerSupplyPWL.csv
+RSenseBattery BatteryTerminal N004 1µ
+Diode_A2 VSupply N001 1N5819
+V3 N004 0 PWL file=BatteryPWL.csv
+RSenseSupply N001 A2Output 1
+R§QLoad A2Output 0 50
+V2 N009 0 5
+RSense5V N009 5V 1µ
+XM1 A2Output N003 BatteryTerminal irf9z24n irf9z24n
+M2 N003 N005 0 0 2N7002
+XU2 N008 N007 5V 0 N005 LTC6078
+XU4 N006 N007 5V 0 N007 LTC6078
+R5 BatteryTerminal N002 100k
+R6 N002 0 100k
+R7 BatteryTerminal N003 100k
+R8 N005 0 10k
+R15 N006 0 15.789k
+R16 5V N006 10k
+R1 N008 N005 300k
+R2 N002 N008 6000
+.model D D
+.lib C:\Users\Altus\Documents\LTspiceXVII\lib\cmp\standard.dio
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Users\Altus\Documents\LTspiceXVII\lib\cmp\standard.mos
+.tran 0 {transtop} 0
+.include A1cfg.txt
+* Don't change these -- used for auto-assessments.\nYou may modify the input files (.txt and .csv) \n               while developing.\nFor submission: \n  * Only one label name per net name\n  * Use only VSupply for power\n  * Use ChargeOn to control charging\n  * Use BatteryTerminal as your battery's \n          positive terminal
+* Config file:
+* Analysis setup:
+* Power\nsupply
+* =============================\nREPLACE WITH YOUR DETAILS\nE. Stewdent.,  00024601\n=============================
+.inc irf9z24n.lib
+* =============================\nIncludes (don't fiddle with this!!)\n=============================
+* =======================================\nYour circuit goes here, these are just placeholders.\n=======================================
+.lib LTC5.lib
+.backanno
+.end
